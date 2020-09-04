@@ -8,9 +8,22 @@
   <body>
 
     <a-scene>
-        <a-box color="tomato" position="0 2 -5" rotation="0 45 45" scale="2 2 2">
+        <a-box src="https://upload.wikimedia.org/wikipedia/commons/f/f4/Emmanuel_Macron_in_2019.jpg"
+               position="0 2 -5" rotation="0 45 45" scale="2 2 2">
         </a-box>
-        <a-entity environment="preset: forest; dressingAmount: 500"></a-entity>
+
+        <!-- Environnement exterieur -->
+        <a-entity environment="preset: poison;
+                               seed: 25;
+                               skyType: color; skyColor: tomato;
+                               lighting: point;
+                               lightPosition: 0 15 -7;
+                               fog: 0.87;
+                               ground: canyon;
+                               groundYScale: 18;
+                               dressingAmount: 42;
+                               dressing scale: 5;">
+        </a-entity>
     </a-scene>
 
   </body>
