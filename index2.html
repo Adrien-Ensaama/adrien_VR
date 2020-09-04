@@ -2,31 +2,17 @@
 
   <head>
     <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
-    <script src="https://unpkg.com/aframe-environment-component/dist/aframe-environment-component.min.js"></script>
   </head>
 
   <body>
 
     <a-scene>
-
-        <a-assets>
-          <a-img id="texture" src="data/brique.jpg">
-          <a-img id="sol" src="https://cdn.aframe.io/a-painter/images/floor.jpg">
-        </a-assets>
-
-
-        <a-box src="#texture"
-               position="0 2 -5"
-               rotation="0 45 45">
-        </a-box>
-
-        <a-plane src="#sol"
+        <a-box   color="tomato"
+                 position="0 3 -20"
                  width="15"
-                 height="15">
-        </a-plane>
-
-
-    </a-scene>
+                 height="15"
+        </a-box>
+  </a-scene>
 
   </body>
 </html>
