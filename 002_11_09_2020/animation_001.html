@@ -8,7 +8,7 @@
 
   <body style='margin : 0px; overflow: hidden;'>
 
-		<a-scene background="color: tomato">
+		<a-scene background="color: tomato" gltf-model="dracoDecoderPath: ./draco/;">
 			<a-assets>
 				<a-asset-item id="glbModel" src="./model/zombie.glb"></a-asset-item>
 			</a-assets>
@@ -21,12 +21,16 @@
 						animation-mixer
 						gltf-model="#glbModel">
 			</a-entity>
+
 			<a-plane position="0 1 -1"
 							 rotation="-90 0 0"
 							 color="#D9AE61"> </a-plane>
+
       <a-entity environment="preset: egypt;
                              lighting: distant;
                              dressingAmount: 25;"></a-entity>
+
+			<a-entity id="camera" position="0 1.7 0" camera look-controls></a-entity>
     	</a-scene>
 
   </body>
