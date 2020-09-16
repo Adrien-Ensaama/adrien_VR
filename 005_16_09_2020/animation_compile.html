@@ -13,16 +13,40 @@
           <a-asset-item id="danseuse" src="./data/animation_compilation.glb"></a-asset-item>
           <img
             id="grece"
-            src="pano.jpg"
+            src="./data/pano.jpg"
           />
         </a-assets>
 
-        <a-entity position="0 0.5 -2"
-                  rotation="90 90 0"
-                  scale="0.5 0.5 0.5"
+        <a-entity position="0 0.5 -2.5"
+                  rotation="90 70 0"
+                  scale="0.7 0.7 0.7"
+                  gltf-model="#danseuse"
+                  animation-mixer="clip: 1_mov_001">
+        </a-entity>
+
+        <a-entity position="-2 0.5 -2.5"
+                  rotation="90 120 0"
+                  scale="0.7 0.7 0.7"
                   gltf-model="#danseuse"
                   animation-mixer="clip: 2_mov_002">
         </a-entity>
+
+
+        <a-entity position="1.7 0.5 -1.5"
+                  rotation="90 40 0"
+                  scale="0.7 0.7 0.7"
+                  gltf-model="#danseuse"
+                  animation-mixer="clip: 3_mov_003">
+        </a-entity>
+
+        <a-entity position="5.8 0.5 -8"
+                  rotation="90 120 0"
+                  scale="0.6 0.6 0.6"
+                  gltf-model="#danseuse"
+                  animation-mixer="clip: 0_stay">
+        </a-entity>
+
+
 
         <a-sky src="#grece"></a-sky>
         <a-light type="ambient" color="white"></a-light>
