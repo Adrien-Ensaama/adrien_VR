@@ -1,0 +1,59 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <script src="https://aframe.io/releases/0.9.2/aframe.min.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.0.1/dist/aframe-extras.min.js"></script>
+  </head>
+
+  <body>
+
+      <a-scene>
+        <a-assets>
+          <a-asset-item id="25"  src="./data/come_1_action_25_frames.glb"></a-asset-item>
+          <a-asset-item id="50"  src="./data/come_1_action_50_frames.glb"></a-asset-item>
+          <a-asset-item id="100" src="./data/come_1_action_100_frames.glb"></a-asset-item>
+          <a-asset-item id="200" src="./data/come_1_action_200_frames.glb"></a-asset-item>
+        </a-assets>
+
+        <a-entity position="2 0.5 -5.5"
+                  rotation="90 90 0"
+                  scale="0.7 0.7 0.7"
+                  gltf-model="#25"
+                  animation-mixer="clip: pas_01_D;
+                                   timeScale: 0.125"
+                  >
+        </a-entity>
+
+        <a-entity position="2 0.5 -2.5"
+                  rotation="90 90 0"
+                  scale="0.7 0.7 0.7"
+                  gltf-model="#50"
+                  animation-mixer="clip: pas_01_D;
+                                   timeScale: 0.25"
+                  >
+        </a-entity>
+
+        <a-entity position="0 0.5 -2.5"
+                  rotation="90 90 0"
+                  scale="0.7 0.7 0.7"
+                  gltf-model="#100"
+                  animation-mixer="clip: pas_01_D;
+                                   timeScale: 0.5"
+                  >
+        </a-entity>
+
+        <a-entity position="-2 0.5 -2.5"
+                  rotation="90 130 0"
+                  scale="0.7 0.7 0.7"
+                  gltf-model="#200"
+                  animation-mixer="clip: pas_01_D;
+                                   timeScale: 1"
+                  >
+        </a-entity>
+
+        <a-light type="ambient" color="white"></a-light>
+        <a-light type="point" intensity="1" position="-2 10 -15"></a-light>
+      </a-scene>
+
+  </body>
+</html>
