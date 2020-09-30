@@ -1,0 +1,49 @@
+<html>
+  <head>
+
+    <style>
+      #titre_001 {color : tomato;}
+      div h1 {color : red;}
+      .contenu_001 {color : blue;}
+    </style>
+
+  </head>
+
+  <body>
+    <h1 id="titre_001"> Hello </h1>
+    <div>
+      <h1> Les DNMADes 3 </h1>
+      <h1 class="contenu_001"> Numérique </h1>
+      <h1 class="contenu_001"> De l'ENS AAMA </h1>
+    </div>
+    <h1 id="modification_java"> Je mange de la viande </h1>
+    <button onclick="bouton_001()"> La viande c'est non </button> <br>
+    <button onclick="bouton_002()"> CLIQUE MOI DESSUS </button>
+    <h1 id="kalkul"> test </h1>
+
+
+    <script>
+      var x = 12;
+      var salutation;
+      if (x > 0) { salutation = "bonjour";}
+      else { salutation = "hello";}
+      document.getElementById("titre_001").innerHTML = salutation;
+
+      function bouton_001() {
+        var contenu = "Je mange des poivrons";
+        document.getElementById("modification_java").innerHTML = contenu;
+      }
+
+      function bouton_002() {
+        console.log("lancement de la fonction")
+        var z="";
+        for (var i = 0; i < 5486; i ++) {
+          z += "_"+i;
+        }
+        document.getElementById("kalkul").innerHTML = z;
+      }
+
+    </script>
+  </body>
+
+</html>
