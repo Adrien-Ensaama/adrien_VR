@@ -25,33 +25,34 @@
             console.log(">>>> " + this.el.id + " a fait " + nb + " boucle.s");
           })
           this.el.addEventListener('animation-finished', () =>{
+            this.el.removeAttribute("animation-mixer");
             nb = 0;
             console.log("fin du pas " + pas);
             console.log(">>>> Tirage au sort d'un pas");
             switch (pas){
-              case 0 : danse = " 'clip:pas_01_D; repetitions: 2; ";
+              case 0 : danse = " clip:pas_01_D; repetitions: 2; ";
                        pas = 1;
                        break;
-              case 1 : danse = " 'clip:pas_02_D; repetitions: 2;' ";
+              case 1 : danse = " clip:pas_02_D; repetitions: 2; ";
                        pas = 2;
                        console.log(">>>> pas =  " + pas);
                        break;
-              case 2 : danse = " 'clip:pas_03_D repetitions: 2;' ";
+              case 2 : danse = " clip:pas_03_D; repetitions: 2; ";
                        pas = 3;
                        console.log(">>>> pas =  " + pas);
                        break;
-              case 3 : danse = " 'clip:pas_04_D; repetitions: 2;' ";
+              case 3 : danse = " clip:pas_04_D; repetitions: 2; ";
                        pas = 4;
                        console.log(">>>> pas =  " + pas);
                        break;
-              case 4 : danse = " 'clip:0_stay; repetitions: 2;' ";
+              case 4 : danse = " clip:0_stay; repetitions: 2; ";
                        pas = 0;
                        console.log(">>>> pas =  " + pas);
                        break;
               default : break;
             }
             console.log(danse);
-            this.el.setAttribute('animation-mixer', danse);
+            this.el.setAttribute("animation-mixer", danse);
           })
         }
       })
