@@ -43,10 +43,9 @@
                   rotation="90 90 0"
                   scale="0.7 0.7 0.7"
                   gltf-model="#come"
-                  animation-mixer="clip: pas_01_D;
-                                   timeScale: 0.35;
-                                   repetitions: 25;"
-                  tests-modèle>
+                  tests-modèle
+                  animation-mixer
+                  tirage-animation>
         </a-entity>
 
         <a-entity sound="src : #musique"
@@ -61,6 +60,48 @@
         <button id="bouton" style="position: absolute; left: 20px; bottom: 20px;">SON ON</button>
 
         <script>
+            var boucle = 0;
+            AFRAME.registerComponent('tirage-animation', {
+              update: function(){
+                console.log("testestesteste");
+                var nb = 0;
+                var pas = 0;
+                var danse;
+                if (boucle == 0){
+                  this.el.setAttribute("animation-mixer", "clip:0_stay; repetitions: 3; timeScale : 0.5;")
+                };
+
+                  if (boucle == 1){
+                    this.el.addEventListener('animation-finished', () =>{
+                      this.el.removeAttribute("animation-mixer");
+                      console.log("fin du pas " + pas);
+                    switch (pas){
+                      case 0 : danse = " clip : 0_stay; repetitions: 1; timeScale : 0.5";
+                               console.log(">>>> Tirage au sort d'un pas");
+
+                               pas = Math.floor(Math.random() * (5));
+
+                               console.log("Le chiffre tiré est " + pas);
+                               break;
+                      case 1 : danse = " clip:pas_01_D; repetitions: 3; timeScale : 0.5";
+                               pas = 0;
+                               break;
+                      case 2 : danse = " clip:pas_02_D; repetitions: 3; timeScale : 0.5"
+                               pas = 0;
+                               break;
+                      case 3 : danse = " clip:pas_03_D; repetitions: 3; timeScale : 0.5"
+                               pas = 0;
+                               break;
+                      case 4 : danse = " clip:pas_04_D; repetitions: 3; timeScale : 0.5";
+                               pas = 0;
+                               break;
+                      default : break;
+                    }
+                    this.el.setAttribute("animation-mixer", danse);
+                  })
+              }
+            }
+          });
             var b = document.querySelector('#bouton');
             var mus = document.querySelector('#musique');
             var danse = document.querySelector('#come');
@@ -78,13 +119,17 @@
                       contexteAudio.resume();
                       mus.play();
                       b.innerHTML = "SON OFF";
-                      console.log(">>>> SON OFF : Playback resumed successfully");
+                      console.log(">>>> SON OFF : La musique se lance");
+                      boucle = 1;
+                      console.log(boucle);
       }
                 else {
                       contexteAudio.suspend();
                       mus.pause();
                       b.innerHTML = "SON ON";
-                      console.log(">>>> SON ON : Playback paused successfully");
+                      console.log(">>>> SON ON : La musique se met en pause");
+                      boucle = 0;
+                      console.log(boucle);
                 }
                 //document.removeEventListener("click", resumeAudio);
             }
