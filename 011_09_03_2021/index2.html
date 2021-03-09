@@ -142,26 +142,26 @@
     		<a-assets>
     			<a-asset-item id="glbCome" src="./assets/models/come_adrien.glb"></a-asset-item>
           <audio id="zorba" src="./assets/audio/zorba.mp3" preload="auto" loop="false"></audio>
-          <img id="img360" crossorigin="anonymous" src="./assets/img/ciel_4.jpg" />
+          <img id="img360" crossorigin="anonymous" src="./assets/img/ciel_5.jpg" />
         </a-assets>
 
             <!-- ECLAIRAGES -->
 			<a-entity light="type: ambient; color: #CCC; intensity: 1"></a-entity>
-			<a-entity light="type: directional; castShadow:true; intensity: 1" position="-0.8 3.8 -3.5"></a-entity>
+			<a-entity light="type: directional; castShadow:true; intensity: 0.7" position="-1.1 2.1 -1.1"></a-entity>
 
             <!-- MODELES 3D -->
 
             <a-entity  id ="come" gltf-model="#glbCome"
             position="0 0 -3" rotation="90 180 90"
             model_loaded shadow="cast:true; receive:true"
-            animation-mixer="clip: idle.001; clampWhenFinished: true; repetitions: 3; duration: 2; "
-            delay_ready="audio: zorba; delai: 5000;"
+            animation-mixer="clip: idle.001; clampWhenFinished: true; repetitions: 5; duration: 2; "
+            delay_ready="audio: zorba; delai: 4000;"
             sirtaki
 					   >
             </a-entity>
 
             <!-- ENVIRONNEMENTS (ici photo 360)-->
-			<a-sky src="#img360" rotation="0 184 0"></a-sky>
+			<a-sky src="#img360" rotation="0 -38 0"></a-sky>
       <a-plane position="0 0 -4" rotation="-90 0 0"
                      width="30" height="10" color="#CCCCCC"
                      shadow="receive: true"
@@ -173,7 +173,7 @@
         </a-scene>
 
         <!-- GESTION AUDIO -->
-        <div id="musique">
+    <div id="musique">
     		<button id="bouton">SON ON</button>
         <p id="info"></p>
         <p id="current"></p>
